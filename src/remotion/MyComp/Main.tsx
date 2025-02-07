@@ -12,6 +12,7 @@ import { loadFont, fontFamily } from "@remotion/google-fonts/Inter";
 import React from "react";
 import { Rings } from "./Rings";
 import { TextFade } from "./TextFade";
+import { CircleAnime } from "./CircleAnime";
 
 loadFont();
 
@@ -51,6 +52,9 @@ export const Main = ({ title }: z.infer<typeof CompositionProps>) => {
             {title}
           </h1>
         </TextFade>
+      </Sequence>
+      <Sequence from={transitionStart + transitionDuration}>
+        <CircleAnime />
       </Sequence>
     </AbsoluteFill>
   );
