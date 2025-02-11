@@ -16,6 +16,7 @@ import { RenderControls } from "../components/RenderControls";
 import { Spacing } from "../components/Spacing";
 import { Tips } from "../components/Tips";
 import { Main } from "../remotion/MyComp/Main";
+import { VortexRaw } from "@/components/VortexRaw";
 
 const Home: NextPage = () => {
   const [text, setText] = useState<string>(defaultMyCompProps.title);
@@ -47,6 +48,7 @@ const Home: NextPage = () => {
             loop
           />
         </div>
+        <VortexRaw />
         <RenderControls
           text={text}
           setText={setText}

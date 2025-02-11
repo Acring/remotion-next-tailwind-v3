@@ -1,0 +1,22 @@
+---
+description: 当用户希望将代码转换成 remotion 组件代码的时候调用
+globs: 
+---
+# 转换成 Remotion 组件
+
+remotion 组件需要与 remotion 的帧系统同步，在原文件上修改
+
+- 描述当前组件实现了什么效果，尽量保证效果不会改变
+- 如果组件存在用户交互逻辑，删除
+- 如果有 css 动画，转成 js 控制
+- 基于帧系统控制，使用下面的 hook
+```
+const { fps } = useVideoConfig();
+const frame = useCurrentFrame();
+```
+
+- 看情况是否需要引入 AbsoluteFill 来实现绝对定位
+- 如果存在 simplex-noise 依赖，改为使用 @remotion/noise 依赖
+  - createNoise3D 改为 noise3D，createNoise2D 改为 noise2D 
+- 如果存在 framer-motion，尝试使用 js 替代
+- 补充更详细的注释

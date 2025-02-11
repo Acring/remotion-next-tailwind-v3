@@ -12,7 +12,10 @@ import { loadFont, fontFamily } from "@remotion/google-fonts/Inter";
 import React from "react";
 import { Rings } from "./Rings";
 import { TextFade } from "./TextFade";
-import { CircleAnime } from "./CircleAnime";
+import { AnimateBackground } from "./AnimateBackground/AnimateBackground";
+import { Squares } from "@/components/SqueareBackground";
+import { FlickeringGrid } from "@/components/FlickeringGrid";
+import { Vortex } from "@/components/Vortex";
 
 loadFont();
 
@@ -54,7 +57,9 @@ export const Main = ({ title }: z.infer<typeof CompositionProps>) => {
         </TextFade>
       </Sequence>
       <Sequence from={transitionStart + transitionDuration}>
-        <CircleAnime />
+        {/* <AnimateBackground interactive={false} /> */}
+        {/* <FlickeringGrid /> */}
+        <Vortex />
       </Sequence>
     </AbsoluteFill>
   );
