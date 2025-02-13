@@ -1,5 +1,5 @@
 "use client";
-import { cn } from "../../../lib/utils";
+import { cn } from "../../../../lib/utils";
 import { useEffect, useState } from "react";
 import { useVideoConfig, useCurrentFrame } from "remotion";
 

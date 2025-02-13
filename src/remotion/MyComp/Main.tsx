@@ -12,12 +12,13 @@ import { loadFont, fontFamily } from "@remotion/google-fonts/Inter";
 import React from "react";
 import { Rings } from "./Rings";
 import { TextFade } from "./TextFade";
-import { AnimateBackground } from "./AnimateBackground/AnimateBackground";
-import { Squares } from "@/components/SqueareBackground";
-import { FlickeringGrid } from "@/components/FlickeringGrid";
-import { Vortex } from "@/components/Vortex";
-import { CircleAnime } from "./CircleAnime";
+import { AnimateBackground } from "./component/AnimateBackground/AnimateBackground";
+import { Squares } from "./component/SqueareBackground";
+import { FlickeringGrid } from "./component/FlickeringGrid";
+import { Vortex } from "./component/Vortex";
+import { CircleAnime } from "./component/CircleAnime";
 import result from "../../../scripts/result";
+import { AsciiArt } from "./component/AsciiArt";
 
 loadFont();
 
@@ -64,14 +65,9 @@ export const Main = ({ title }: z.infer<typeof CompositionProps>) => {
         <Vortex />
       </Sequence>
       <Sequence from={transitionStart + transitionDuration}>
-        <div
-          className="absolute top-0 left-0 w-full h-full whitespace-pre text-xs"
-          style={{ fontFamily: 'Consolas, Monaco, "Courier New", monospace' }}
-        >
-          {result.split("\n").map((line, index) => (
-            <div key={index}>{line}</div>
-          ))}
-        </div>
+        <AbsoluteFill className="justify-center items-center">
+          <AsciiArt content={result} startDuration={fps * 2} />
+        </AbsoluteFill>
       </Sequence>
     </AbsoluteFill>
   );

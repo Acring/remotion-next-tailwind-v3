@@ -62,15 +62,12 @@ importers:
       remotion:
         specifier: 4.0.260
         version: 4.0.260(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-<<<<<<< HEAD
-      simplex-noise:
-        specifier: ^4.0.3
-        version: 4.0.3
-=======
       sharp:
         specifier: ^0.33.5
         version: 0.33.5
->>>>>>> 690e910 (feat: 使用 ascii 图片处理)
+      simplex-noise:
+        specifier: ^4.0.3
+        version: 4.0.3
       tailwind-merge:
         specifier: 3.0.1
         version: 3.0.1

@@ -48,7 +48,7 @@ const Home: NextPage = () => {
             loop
           />
         </div>
-        <VortexRaw />
+        {/* <VortexRaw /> */}
         <RenderControls
           text={text}
           setText={setText}
