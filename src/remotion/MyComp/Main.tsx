@@ -16,6 +16,8 @@ import { AnimateBackground } from "./AnimateBackground/AnimateBackground";
 import { Squares } from "@/components/SqueareBackground";
 import { FlickeringGrid } from "@/components/FlickeringGrid";
 import { Vortex } from "@/components/Vortex";
+import { CircleAnime } from "./CircleAnime";
+import result from "../../../scripts/result";
 
 loadFont();
 
@@ -60,6 +62,16 @@ export const Main = ({ title }: z.infer<typeof CompositionProps>) => {
         {/* <AnimateBackground interactive={false} /> */}
         {/* <FlickeringGrid /> */}
         <Vortex />
+      </Sequence>
+      <Sequence from={transitionStart + transitionDuration}>
+        <div
+          className="absolute top-0 left-0 w-full h-full whitespace-pre text-xs"
+          style={{ fontFamily: 'Consolas, Monaco, "Courier New", monospace' }}
+        >
+          {result.split("\n").map((line, index) => (
+            <div key={index}>{line}</div>
+          ))}
+        </div>
       </Sequence>
     </AbsoluteFill>
   );
